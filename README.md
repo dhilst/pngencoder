@@ -10,6 +10,12 @@ python3 pngdataencoder.py --encode images/thor.png --input-file secret.jpeg --ou
 python3 pngdataencoder.py --decode images/thorsecret.png --output-path reveal.jpeg
 ```
 
+You can also encode decode from url, just pass `--from-url` and pass the url to the `image` argument.
+
+```
+python3 pngdataencoder.py --decode --from-url --output-path outhhehe.jpeg https://raw.githubusercontent.com/dhilst/pngencoder/master/images/thorsecret.png
+```
+
 Input image:
 
 ![Thor](images/thor.png)
@@ -27,6 +33,7 @@ Here is another example with a simple hello world:
 
 * Python3
 * Pillow
+* requests
 
 To install in a vitual environment
 
