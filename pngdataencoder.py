@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw  # type: ignore
 
 def download_image(url: str) -> str:
     with tempfile.NamedTemporaryFile(mode='wb', delete=False) as fil:
-        fil.write(requests.get(args.image).content)
+        fil.write(requests.get(url).content)
         return fil.name
 
 
