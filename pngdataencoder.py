@@ -3,12 +3,24 @@ import sys
 from typing import *
 from typing import BinaryIO
 from typing_extensions import *  # type: ignore
-from PIL import Image, ImageDraw  # type: ignore
 from itertools import product
 import argparse
+import tempfile
+
+import requests
+from PIL import Image, ImageDraw  # type: ignore
+
+
+def download_image(url: str) -> str:
+    with tempfile.NamedTemporaryFile(mode='wb', delete=False) as fil:
+        fil.write(requests.get(args.image).content)
+        return fil.name
 
 
 def encode(args: argparse.Namespace):
+    if args.from_url:
+        args.image = download_image(args.image)
+
     img = Image.open(args.image)
     output_img = Image.new("RGB", img.size)
     if args.input_data:
@@ -45,6 +57,9 @@ def encode(args: argparse.Namespace):
 
 
 def decode(args):
+    if args.from_url:
+        args.image = download_image(args.image)
+
     img = Image.open(args.image)
 
     data_size: int = 0
@@ -91,6 +106,7 @@ def main() -> None:
     argparser.add_argument(
         "--output-path", type=str, help="Output image path"
     )
+    argparser.add_argument("--from-url", action="store_true", help="Input is an URL")
 
     args = argparser.parse_args()
     if args.encode:

@@ -11,12 +11,15 @@ python3 pngdataencoder.py --decode images/thorsecret.png --output-path reveal.jp
 ```
 
 Input image:
+
 ![Thor](images/thor.png)
 
-Output image (yeah it looks the same, that's the idea)
+Output image with secret.jpeg encoded on it:
+
 ![output](images/thorsecret.png)
 
-Here is another example with a simple hello world
+Here is another example with a simple hello world:
+
 ![hello world](images/screenshot.png)
 
 
