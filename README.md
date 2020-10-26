@@ -35,7 +35,7 @@ Here is another example with a simple hello world:
 * Pillow
 * requests
 
-To install in a vitual environment
+To install in a virtual environment
 
 ```
 test -d venv || python3 -m venv venv
@@ -51,7 +51,7 @@ pip3 install -r requirements.txt
 * It's using the lower 2 bits of the blue pixel to encode data
 
 
-This was heavly inspired by [this](https://twitter.com/hardmaru/status/1319965852251254784?s=20) tweet
+This was heavily inspired by [this](https://twitter.com/hardmaru/status/1319965852251254784?s=20) tweet
 
 The idea to use lower bits was from [@coproduto](https://twitter.com/coproduto/status/1320148011834613760?s=20), thank you!
 
